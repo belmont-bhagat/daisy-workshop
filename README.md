@@ -23,9 +23,20 @@ Go to the `repo/` folder — that's your starting point.
 
 ```bash
 cd repo
+
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate        # Mac/Linux
+# .venv\Scripts\activate         # Windows
+
+# Install dependencies
 pip install anthropic python-dotenv requests
+
+# Add your Anthropic API key
 cp .env.example .env
-# Add your Anthropic API key to .env
+# Open .env and paste your key
+
+# Run the agent
 python agent.py
 ```
 
@@ -55,4 +66,5 @@ The starter agent shows the core agentic loop — **perceive → reason → act 
 
 - Python 3.10+
 - An [Anthropic API key](https://console.anthropic.com/)
+- A virtual environment (recommended — keeps dependencies isolated)
 - `pip install anthropic python-dotenv requests`

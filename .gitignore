@@ -6,6 +6,7 @@ __pycache__/
 venv/
 env/
 *.egg-info/
+repo/.venv/
 
 # Environment — never commit your API key
 .env

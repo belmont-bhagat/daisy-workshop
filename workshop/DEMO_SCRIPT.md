@@ -288,10 +288,20 @@ After Demo 3, show this on screen:
 ```bash
 # Clone and run in under 10 minutes:
 git clone https://github.com/belmont-bhagat/daisy-workshop.git
-cd repo
+cd daisy-workshop/repo
+
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate      # Mac/Linux
+# .venv\Scripts\activate       # Windows
+
+# Install dependencies
 pip install anthropic python-dotenv requests
+
+# Add your API key
 cp .env.example .env
 # Edit .env — add your key from console.anthropic.com
+
 python agent.py
 ```
 

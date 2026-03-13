@@ -9,21 +9,31 @@ The agent has three tools it can use autonomously:
 
 ---
 
-## Setup (3 commands)
+## Setup
 
 ```bash
-# 1. Install dependencies
+# 1. Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate        # Mac/Linux
+# .venv\Scripts\activate         # Windows
+
+# 2. Install dependencies
 pip install anthropic python-dotenv requests
 
-# 2. Add your Anthropic API key
+# 3. Add your Anthropic API key
 cp .env.example .env
-# Then open .env and paste your key from https://console.anthropic.com/
+# Open .env and paste your key from https://console.anthropic.com/
 
-# 3. Run the agent
+# 4. Run the agent
 python agent.py
 ```
 
 That's it. The agent will research agentic AI, summarize it, and save `notes/summary.txt`.
+
+> **Next time** you open the project, just re-activate the venv before running:
+> ```bash
+> source .venv/bin/activate   # Mac/Linux
+> ```
 
 ---
 
