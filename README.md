@@ -30,7 +30,7 @@ source .venv/bin/activate        # Mac/Linux
 # .venv\Scripts\activate         # Windows
 
 # Install dependencies
-pip install anthropic python-dotenv requests
+pip install -r requirements.txt
 
 # Add your Anthropic API key
 cp .env.example .env
@@ -67,4 +67,4 @@ The starter agent shows the core agentic loop — **perceive → reason → act 
 - Python 3.10+
 - An [Anthropic API key](https://console.anthropic.com/)
 - A virtual environment (recommended — keeps dependencies isolated)
-- `pip install anthropic python-dotenv requests`
+- `pip install -r requirements.txt`

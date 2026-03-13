@@ -18,7 +18,7 @@ source .venv/bin/activate        # Mac/Linux
 # .venv\Scripts\activate         # Windows
 
 # 2. Install dependencies
-pip install anthropic python-dotenv requests
+pip install -r requirements.txt
 
 # 3. Add your Anthropic API key
 cp .env.example .env
