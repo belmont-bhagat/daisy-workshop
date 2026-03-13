@@ -28,7 +28,7 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 
 MODEL = "claude-sonnet-4-20250514"
-MAX_ITERATIONS = 5  # Hard cap on reasoning loops
+MAX_ITERATIONS = 10  # Hard cap on reasoning loops
 
 # Default task that runs when you execute: python agent.py
 DEFAULT_TASK = (

@@ -6,48 +6,31 @@ Each tool maps to a real action the agent can take in the world.
 import os
 import ast
 import operator
-import requests
+from ddgs import DDGS
 
 
 # ---------------------------------------------------------------------------
 # Tool 1: search_web
-# Uses the DuckDuckGo Instant Answer API — no API key required.
+# Uses the duckduckgo-search package — no API key required.
+# Returns the top 3 result snippets joined as plain text.
 # ---------------------------------------------------------------------------
 
 def search_web(query: str) -> str:
-    """Search DuckDuckGo and return a plain-text summary of the results."""
-    url = "https://api.duckduckgo.com/"
-    params = {
-        "q": query,
-        "format": "json",
-        "no_html": 1,
-        "skip_disambig": 1,
-    }
+    """Search DuckDuckGo and return plain-text snippets from the top results."""
     try:
-        response = requests.get(url, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
+        with DDGS() as ddgs:
+            results = list(ddgs.text(query, max_results=3))
 
-        # Prefer the main abstract if available
-        abstract = data.get("Abstract", "").strip()
-        if abstract:
-            source = data.get("AbstractSource", "DuckDuckGo")
-            return f"{abstract}\n\n(Source: {source})"
+        if not results:
+            return f"No results found for '{query}'."
 
-        # Fall back to the top related topic snippets
-        topics = data.get("RelatedTopics", [])
-        snippets = []
-        for topic in topics[:5]:
-            if isinstance(topic, dict) and "Text" in topic:
-                snippets.append(topic["Text"])
+        # Format each result as: Title\nSnippet\nURL
+        parts = []
+        for r in results:
+            parts.append(f"{r.get('title', '')}\n{r.get('body', '')}\n{r.get('href', '')}")
 
-        if snippets:
-            return "\n\n".join(snippets)
+        return "\n\n---\n\n".join(parts)
 
-        return f"No summary found for '{query}'. Try a more specific query."
-
-    except requests.RequestException as e:
-        return f"Search failed (network error): {e}"
     except Exception as e:
         return f"Search failed: {e}"
 
