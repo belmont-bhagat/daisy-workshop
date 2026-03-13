@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Environment — never commit your API key
+.env
+
+# Agent output
+repo/notes/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
