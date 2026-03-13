@@ -287,7 +287,7 @@ After Demo 3, show this on screen:
 
 ```bash
 # Clone and run in under 10 minutes:
-git clone [YOUR_REPO_URL_HERE]
+git clone https://github.com/belmont-bhagat/daisy-workshop.git
 cd repo
 pip install anthropic python-dotenv requests
 cp .env.example .env
