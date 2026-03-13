@@ -1,0 +1,16 @@
+Agentic AI Summary:
+
+• Agentic AI refers to autonomous artificial intelligence systems that can perceive
+  their environment, reason, plan, and make independent decisions to achieve specific
+  goals with minimal human supervision — essentially mimicking human decision-making
+  processes across complex, multi-step tasks.
+
+• These AI agents are capable of coordinated action across digital systems, can adapt
+  their behaviour based on environmental changes, and execute tasks in real-time while
+  learning from their interactions — using tools like web search, file I/O, and APIs
+  to act in the world rather than just respond to prompts.
+
+• Agentic AI represents a significant advancement beyond traditional chatbots by
+  enabling systems to operate autonomously across domains including research, coding,
+  and business automation — driven by a repeating loop of: perceive → reason → act →
+  observe, until the task is complete.

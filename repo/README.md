@@ -12,19 +12,23 @@ The agent has three tools it can use autonomously:
 ## Setup
 
 ```bash
-# 1. Create and activate a virtual environment
+# 1. Clone and enter the repo
+git clone https://github.com/belmont-bhagat/daisy-workshop.git
+cd daisy-workshop/repo
+
+# 2. Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate        # Mac/Linux
 # .venv\Scripts\activate         # Windows
 
-# 2. Install dependencies
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 3. Add your Anthropic API key
+# 4. Add your Anthropic API key
 cp .env.example .env
 # Open .env and paste your key from https://console.anthropic.com/
 
-# 4. Run the agent
+# 5. Run the agent
 python agent.py
 ```
 

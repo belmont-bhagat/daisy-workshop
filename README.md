@@ -22,7 +22,7 @@ daisy-workshop/
 Go to the `repo/` folder — that's your starting point.
 
 ```bash
-cd repo
+cd daisy-workshop/repo
 
 # Create and activate a virtual environment
 python -m venv .venv

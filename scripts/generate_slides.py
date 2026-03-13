@@ -335,13 +335,13 @@ content_slide(prs, "Three things to watch",
 content_slide(prs, "Your turn",
               body="Running in under 10 minutes.",
               code=(
-                  "git clone [repo URL]\n"
-                  "cd repo\n"
-                  "pip install anthropic python-dotenv requests\n"
-                  "cp .env.example .env\n"
-                  "# Add your API key\n"
+                  "git clone https://github.com/belmont-bhagat/daisy-workshop.git\n"
+                  "cd daisy-workshop/repo\n"
+                  "python -m venv .venv && source .venv/bin/activate\n"
+                  "pip install -r requirements.txt\n"
+                  "cp .env.example .env  # then add your API key\n"
                   "python agent.py"
-              ), code_size=18)
+              ), code_size=17)
 
 # 18 — Q&A
 content_slide(prs, "Questions?",
@@ -351,6 +351,8 @@ content_slide(prs, "Questions?",
                   "• How would you test an agent?"
               ))
 
-out = "/Users/bhagatpranish/Documents/daisy-workshop/workshop/slides.pptx"
+import os, pathlib
+out = pathlib.Path(__file__).parent.parent / "dist" / "slides.pptx"
+out.parent.mkdir(exist_ok=True)
 prs.save(out)
 print(f"Saved → {out}")
